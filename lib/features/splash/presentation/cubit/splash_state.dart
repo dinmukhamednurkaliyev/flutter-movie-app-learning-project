@@ -1,9 +1,8 @@
 part of 'splash_cubit.dart';
 
-abstract class SplashState {}
+abstract class SplashState{}
 
-class DisplaySplash extends SplashState {}
+class DisplaySplash extends SplashState{}
+class Authenticated extends SplashState{}
+class Unauthenticated extends SplashState{}
 
-class Authentcated extends SplashState {}
-
-class Unauthentcated extends SplashState {}
