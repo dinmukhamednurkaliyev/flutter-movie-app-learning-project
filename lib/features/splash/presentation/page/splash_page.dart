@@ -1,12 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/assets/app_images.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class SplashPage extends StatelessWidget {
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(AppImages.splashBackground),
+              ),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(gradient: LinearGradient(
+              begin: Alignment.center,
+              end: Alignment.bottomCenter,
+              colors: [
+                  Color(0xff1a1b20).withValues(alpha: 0),
+                  Color(0xff1a1b20),
+              ]
+            )),
+          ),
+        ],
+      ),
     );
   }
 }
