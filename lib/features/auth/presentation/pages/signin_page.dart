@@ -3,6 +3,7 @@ import 'package:movie_app/features/auth/presentation/widgets/email_textfield.dar
 import 'package:movie_app/features/auth/presentation/widgets/password_textfield.dart';
 import 'package:movie_app/features/auth/presentation/widgets/signin_button.dart';
 import 'package:movie_app/features/auth/presentation/widgets/signin_text.dart';
+import 'package:movie_app/features/auth/presentation/widgets/signup_text.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -23,6 +24,8 @@ class SignInPage extends StatelessWidget {
             passwordTextField(),
             const SizedBox(height: 60),
             signInButton(),
+            const SizedBox(height: 20),
+            signUpText(context),
           ]
           )
         )

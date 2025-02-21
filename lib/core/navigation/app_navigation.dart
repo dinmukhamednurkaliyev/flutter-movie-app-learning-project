@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppNavigation {
+class AppNavigator {
 
   static void pushReplacement(BuildContext context,Widget widget) {
     Navigator.pushReplacement(
