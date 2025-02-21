@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/theme/app_colors.dart';
 import 'package:reactive_button/reactive_button.dart';
 
-Widget signInButton() {
+Widget authButton(String title) {
   return ReactiveButton(
-    title: 'Sign In',
+    title: title,
     activeColor: AppColors.primary,
-    onPressed: () async {
-      // Call the signIn function
-    },
+    onPressed:  () async {},
     onSuccess: (){},
     onFailure: (error){},
   );

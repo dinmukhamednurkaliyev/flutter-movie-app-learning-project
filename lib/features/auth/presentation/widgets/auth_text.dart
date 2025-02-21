@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget signInText() {
+Widget authText(String text) {
   return Text(
-    'Sign In',
+    text,
     style: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.bold,
