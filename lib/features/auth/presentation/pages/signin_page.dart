@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/auth/presentation/widgets/email_textfield.dart';
 import 'package:movie_app/features/auth/presentation/widgets/password_textfield.dart';
+import 'package:movie_app/features/auth/presentation/widgets/signin_button.dart';
 import 'package:movie_app/features/auth/presentation/widgets/signin_text.dart';
 
 class SignInPage extends StatelessWidget {
@@ -20,6 +21,8 @@ class SignInPage extends StatelessWidget {
             emailTextField(),
             const SizedBox(height: 20),
             passwordTextField(),
+            const SizedBox(height: 60),
+            signInButton(),
           ]
           )
         )
