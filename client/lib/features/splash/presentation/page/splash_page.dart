@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/assets/app_images.dart';
 import 'package:movie_app/core/navigation/app_navigation.dart';
-import 'package:movie_app/features/auth/presentation/pages/signin_page.dart';
+import 'package:movie_app/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:movie_app/features/home/presentation/pages/home_page.dart';
 import 'package:movie_app/features/splash/presentation/cubit/splash_cubit.dart';
 
