@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/features/auth/data/models/sign_up_request_params_model.dart';
+import 'package:movie_app/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:movie_app/features/auth/data/sources/auth_remote_source.dart';
+import 'package:movie_app/features/auth/domain/usecases/sign_up_usecase.dart';
 import 'package:movie_app/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:movie_app/features/auth/presentation/widgets/email_textfield.dart';
 import 'package:movie_app/features/auth/presentation/widgets/password_textfield.dart';
@@ -7,7 +11,10 @@ import 'package:movie_app/features/auth/presentation/widgets/auth_text.dart';
 import 'package:movie_app/features/auth/presentation/widgets/auth_link_text.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+  SignUpPage({super.key});
+
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +27,35 @@ class SignUpPage extends StatelessWidget {
           children: [
             authText('Sign Up'),
             const SizedBox(height: 30),
-            emailTextField(),
+            emailTextField(controller: _emailController),
             const SizedBox(height: 20),
-            passwordTextField(),
+            passwordTextField(controller: _passwordController),
             const SizedBox(height: 60),
-            authButton('Sign Up'),
+            authButton(
+              title: 'Sign Up',
+              onPressed: () async {
+                await SignUpUsecase(
+                  repository: AuthRepositoryImpl(
+                    authRemoteSource: AuthRemoteSourceImpl(),
+                  ),
+                ).call(
+                  params: SignUpRequestParamsModel(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 20),
-            authLinkText(context, 'Already have an account? ', 'Sign In', SignInPage()),
-          ]
-          )
-        )
-      );
+            authLinkText(
+              context,
+              'Already have an account? ',
+              'Sign In',
+              SignInPage(),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

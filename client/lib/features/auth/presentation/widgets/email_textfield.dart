@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget emailTextField() {
+Widget emailTextField({required TextEditingController controller}) {
   return TextField(
-    decoration: InputDecoration(
-      hintText: 'Email',
-    ),
+    controller: controller,
+    decoration: InputDecoration(hintText: 'Email'),
   );
 }

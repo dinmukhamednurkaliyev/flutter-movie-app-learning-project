@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget passwordTextField() {
+Widget passwordTextField({required TextEditingController controller}) {
   return TextField(
+    controller: controller,
     decoration: InputDecoration(
       hintText: 'Password',
     ),
