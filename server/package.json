@@ -2,10 +2,10 @@
 	"name": "movie_app",
 	"version": "1.0.0",
 	"description": "",
-	"main": "backend/server.js",
+	"main": "server/server.js",
 	"scripts": {
 		"dev": "nodemon backend/server.js",
-		"start": "nodemon backend/server.js",
+		"start": "nodemon server/server.js",
 		"build": "npm install"
 	},
 	"keywords": [],
