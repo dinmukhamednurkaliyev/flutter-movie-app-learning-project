@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/features/auth/data/models/sign_up_request_params_model.dart';
-import 'package:movie_app/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:movie_app/features/auth/data/sources/auth_remote_source.dart';
 import 'package:movie_app/features/auth/domain/usecases/sign_up_usecase.dart';
 import 'package:movie_app/features/auth/presentation/pages/sign_in_page.dart';
 import 'package:movie_app/features/auth/presentation/widgets/email_textfield.dart';
