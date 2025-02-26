@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/features/auth/data/models/sign_up_request_params_model.dart';
 import 'package:movie_app/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:movie_app/features/auth/data/sources/auth_remote_source.dart';
@@ -34,11 +35,7 @@ class SignUpPage extends StatelessWidget {
             authButton(
               title: 'Sign Up',
               onPressed: () async {
-                await SignUpUsecase(
-                  repository: AuthRepositoryImpl(
-                    authRemoteSource: AuthRemoteSourceImpl(),
-                  ),
-                ).call(
+                await serviceLocator<SignUpUsecase>().call(
                   params: SignUpRequestParamsModel(
                     email: _emailController.text,
                     password: _passwordController.text,
