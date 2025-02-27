@@ -35,14 +35,13 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(height: 60),
             AuthButton(
               title: 'Sign Up',
-              onPressed: () async {
-                await serviceLocator<SignUpUseCase>().call(
+              onPressed: () async =>
+                serviceLocator<SignUpUseCase>().call(
                   params: SignUpRequestParamsModel(
                     email: _emailController.text,
                     password: _passwordController.text,
                   ),
-                );
-              },
+                ),
               onSuccess: () {
                 AppNavigator.pushAndRemove(context, HomePage());
               },
