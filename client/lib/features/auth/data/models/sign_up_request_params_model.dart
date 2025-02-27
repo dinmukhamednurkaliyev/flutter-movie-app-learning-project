@@ -4,14 +4,7 @@ class SignUpRequestParamsModel {
 
   SignUpRequestParamsModel({required this.email, required this.password});
 
-  SignUpRequestParamsModel copyWith({String? email, String? password}) {
-    return SignUpRequestParamsModel(
-      email: email ?? this.email,
-      password: password ?? this.password,
-    );
-  }
-
   Map<String, dynamic> toMap() {
-    return {'email': email, 'password': password};
+    return <String, dynamic> {'email': email, 'password': password};
   }
 }
