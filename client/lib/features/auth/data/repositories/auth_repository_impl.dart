@@ -10,8 +10,8 @@ class AuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<Either> signUpWithEmailAndPassword(SignUpRequestParamsModel params) async {
-    var result = await serviceLocator<AuthRemoteSource>().signUpWithEmailAndPassword(params);
-     return result.fold( 
+    var response = await serviceLocator<AuthRemoteSource>().signUpWithEmailAndPassword(params);
+     return response.fold( 
       (error) {
         return Left(error);
       },
@@ -25,9 +25,9 @@ class AuthRepositoryImpl implements AuthRepository {
   
   @override
   Future<Either> signInWithEmailAndPassword(SignInRequestParamsModel params) async {
-    var result = await serviceLocator<AuthRemoteSource>().signInWithEmailAndPassword(params);
+    var response = await serviceLocator<AuthRemoteSource>().signInWithEmailAndPassword(params);
     
-    return result.fold( 
+    return response.fold( 
       (error) {
         return Left(error);
       },
