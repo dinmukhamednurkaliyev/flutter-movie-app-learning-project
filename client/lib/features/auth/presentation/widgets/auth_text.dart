@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-Widget authText(String text) {
-  return Text(
-    text,
-    style: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-    ),
-  );
+class AuthTitleText extends StatelessWidget {
+  final String text;
+
+  const AuthTitleText({super.key, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 24,
+      ),
+    );
+  }
 }

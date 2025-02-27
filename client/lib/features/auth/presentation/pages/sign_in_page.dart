@@ -5,9 +5,9 @@ import 'package:movie_app/core/widgets/display_message.dart';
 import 'package:movie_app/features/auth/data/models/sign_in_request_params_model.dart';
 import 'package:movie_app/features/auth/domain/usecases/sign_in_usecase.dart';
 import 'package:movie_app/features/auth/presentation/pages/sign_up_page.dart';
+import 'package:movie_app/features/auth/presentation/widgets/auth_button.dart';
 import 'package:movie_app/features/auth/presentation/widgets/email_textfield.dart';
 import 'package:movie_app/features/auth/presentation/widgets/password_textfield.dart';
-import 'package:movie_app/features/auth/presentation/widgets/auth_button.dart';
 import 'package:movie_app/features/auth/presentation/widgets/auth_text.dart';
 import 'package:movie_app/features/auth/presentation/widgets/auth_link_text.dart';
 import 'package:movie_app/features/home/presentation/pages/home_page.dart';
@@ -27,13 +27,13 @@ class SignInPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            authText('Sign In'),
+            AuthTitleText(text: 'Sign In'),
             const SizedBox(height: 30),
-            emailTextField(controller: _emailController),
+            EmailTextField(controller: _emailController),
             const SizedBox(height: 20),
-            passwordTextField(controller: _passwordController),
+            PasswordTextField(controller: _passwordController),
             const SizedBox(height: 60),
-            authButton(
+            AuthButton(
               title: 'Sign In',
               onPressed: () async {
                 await serviceLocator<SignInUseCase>().call(
@@ -48,14 +48,14 @@ class SignInPage extends StatelessWidget {
               },
               onFailure: (error) {
                 DisplayMessage.errorMessage(error, context);
-              }
+              },
             ),
             const SizedBox(height: 20),
-            authLinkText(
+            AuthLinkText(
               context,
-              'Don\'t have an account? ',
-              'Sign Up',
-              SignUpPage(),
+              prefixText: 'Don\'t have an account? ',
+              linkText: 'Sign Up',
+              pageRoute:  SignUpPage(),
             ),
           ],
         ),

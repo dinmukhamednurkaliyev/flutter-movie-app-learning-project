@@ -27,13 +27,13 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            authText('Sign Up'),
+            AuthTitleText(text: 'Sign Up'),
             const SizedBox(height: 30),
-            emailTextField(controller: _emailController),
+            EmailTextField(controller: _emailController),
             const SizedBox(height: 20),
-            passwordTextField(controller: _passwordController),
+            PasswordTextField(controller: _passwordController),
             const SizedBox(height: 60),
-            authButton(
+            AuthButton(
               title: 'Sign Up',
               onPressed: () async {
                 await serviceLocator<SignUpUseCase>().call(
@@ -51,11 +51,11 @@ class SignUpPage extends StatelessWidget {
               }
             ),
             const SizedBox(height: 20),
-            authLinkText(
-              context,
-              'Already have an account? ',
-              'Sign In',
-              SignInPage(),
+            AuthLinkText(
+              context,             
+              prefixText: 'Already have an account? ',
+              linkText: 'Sign In',
+              pageRoute: SignInPage(),
             ),
           ],
         ),
