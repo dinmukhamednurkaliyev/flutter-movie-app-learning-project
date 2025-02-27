@@ -5,6 +5,7 @@ import 'package:movie_app/features/auth/data/models/sign_in_request_params_model
 abstract class AuthRepository {
 
   Future<Either> signUpWithEmailAndPassword(SignUpRequestParamsModel params);
-
   Future<Either> signInWithEmailAndPassword(SignInRequestParamsModel params);
+  Future<bool> isLoggedIn();
+
 }
