@@ -4,16 +4,16 @@ import 'package:reactive_button/reactive_button.dart';
 
 class AuthButton extends StatelessWidget {
   final String title;
-  final Future<void> Function()? onPressed;
-  final Function()? onSuccess;
-  final Function(dynamic)? onFailure;
+  final Future<dynamic> Function() onPressed;
+  final VoidCallback onSuccess;
+  final Function(dynamic) onFailure;
 
   const AuthButton({
     super.key,
     required this.title,
-    this.onPressed,
-    this.onSuccess,
-    this.onFailure,
+    required this.onPressed,
+    required this.onSuccess,
+    required this.onFailure,
   });
 
   @override
@@ -21,9 +21,9 @@ class AuthButton extends StatelessWidget {
     return ReactiveButton(
       title: title,
       activeColor: AppColors.primary,
-      onPressed: onPressed ?? () async => {},
-      onSuccess: onSuccess ?? () {},
-      onFailure: onFailure ?? (error) {},
+      onPressed: onPressed,
+      onSuccess: onSuccess,
+      onFailure: onFailure,
     );
   }
 }
