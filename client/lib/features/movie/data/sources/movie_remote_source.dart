@@ -6,6 +6,7 @@ import 'package:movie_app/core/network/api_client.dart';
 
 abstract class MovieRemoteSource {
   Future<Either> getTrangingMovies();
+  Future<Either> getNowPlayingMovies();
 }
 
 class MovieRemoteSourceImpl implements MovieRemoteSource {
@@ -14,6 +15,18 @@ class MovieRemoteSourceImpl implements MovieRemoteSource {
     try {
       var response = await serviceLocator<ApiClient>().get(
         ApiConfig.trendingMovies,
+      ); 
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['message']);
+    }
+  }
+  
+  @override
+  Future<Either> getNowPlayingMovies() async {
+    try {
+      var response = await serviceLocator<ApiClient>().get(
+        ApiConfig.nowPlayingMovies,
       ); 
       return Right(response.data);
     } on DioException catch (e) {
