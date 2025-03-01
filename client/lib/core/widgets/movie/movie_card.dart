@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/assets/app_images.dart';
 import 'package:movie_app/core/theme/app_colors.dart';
 import 'package:movie_app/features/movie/domain/entities/movie_entity.dart';
 
@@ -35,7 +36,7 @@ class MovieCardWidget extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(
-                    movieEntity.posterPath!
+                    AppImagesAssets.movieImageBasePath + movieEntity.posterPath!
                   )
                  ),
                   borderRadius: const BorderRadius.only(

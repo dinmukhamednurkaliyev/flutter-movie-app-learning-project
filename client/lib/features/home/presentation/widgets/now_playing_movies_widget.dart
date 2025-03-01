@@ -17,13 +17,17 @@ class NowPlayingMoviesWidget extends StatelessWidget {
             return Center(child: const CircularProgressIndicator());
           } 
           if(state is NowPlayingMoviesLoaded){
-              // return ListView.separated(
-              //   itemBuilder: (context, index) {
-              //     return MovieCardWidget(movieEntity: state.movies[index]);
-              //   },
-              //   separatorBuilder: (context, index) => const SizedBox(width: 10,),
-              //   itemCount: state.movies.length,
-              // );
+              return SizedBox(
+                height: 300,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return MovieCardWidget(movieEntity: state.movies[index]);
+                  },
+                  separatorBuilder: (context, index) => const SizedBox(width: 10,),
+                  itemCount: state.movies.length,
+                ),
+              );
           }
           if(state is FailureLoadingNowPlayingMovies){
             return Text(state.message);
