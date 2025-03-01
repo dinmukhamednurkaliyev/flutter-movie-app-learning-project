@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/core/navigation/app_navigation.dart';
-import 'package:movie_app/core/widgets/display_message.dart';
+import 'package:movie_app/core/widgets/message/display_message_widget.dart';
 import 'package:movie_app/features/auth/data/models/sign_up_request_params_model.dart';
 import 'package:movie_app/features/auth/domain/usecases/sign_up_usecase.dart';
 import 'package:movie_app/features/auth/presentation/pages/sign_in_page.dart';
@@ -46,7 +46,7 @@ class SignUpPage extends StatelessWidget {
                 AppNavigator.pushAndRemove(context, HomePage());
               },
               onFailure: (error) {
-                DisplayMessage.errorMessage(error, context);
+                DisplayMessageWidget.errorMessage(error, context);
               }
             ),
             const SizedBox(height: 20),

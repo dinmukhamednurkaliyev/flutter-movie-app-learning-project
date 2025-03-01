@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/theme/app_colors.dart';
 
-class BasicAppbar extends StatelessWidget implements PreferredSizeWidget {
+class AppbarWidget extends StatelessWidget implements PreferredSizeWidget {
   final Widget ? title;
   final Widget ? action;
   final Widget ? leading;
   final Color ? backgroundColor;
   final bool hideBack;
   final double ? height;
-  const BasicAppbar({
+  const AppbarWidget({
     this.title,
     this.hideBack = false,
     this.action,
