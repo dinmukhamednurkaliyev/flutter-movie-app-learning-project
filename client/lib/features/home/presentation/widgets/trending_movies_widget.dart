@@ -5,8 +5,8 @@ import 'package:movie_app/features/home/presentation/cubit/trending_movies_cubit
 import 'package:movie_app/features/home/presentation/cubit/trending_movies_state.dart';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 
-class TrendingMovies extends StatelessWidget {
-  const TrendingMovies({super.key});
+class TrendingMoviesWidget extends StatelessWidget {
+  const TrendingMoviesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class TrendingMovies extends StatelessWidget {
       child: BlocBuilder<TrendingMoviesCubit, TrendingMoviesState>(
         builder: (context, state) {
           if(state is TrendingMoviesLoading){
-            return const CircularProgressIndicator();
+            return Center(child: const CircularProgressIndicator());
           } 
           if(state is TrendingMoviesLoaded){
               return FanCarouselImageSlider.sliderType1(

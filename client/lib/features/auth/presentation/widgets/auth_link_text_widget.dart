@@ -2,12 +2,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/navigation/app_navigation.dart';
 
-class AuthLinkText extends StatelessWidget {
+class AuthLinkTextWidget extends StatelessWidget {
   final String prefixText;
   final String linkText;
   final Widget pageRoute;
 
-  const AuthLinkText(BuildContext context, {
+  const AuthLinkTextWidget(BuildContext context, {
     super.key,
     required this.prefixText,
     required this.linkText,

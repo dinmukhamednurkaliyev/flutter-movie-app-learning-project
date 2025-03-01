@@ -5,11 +5,11 @@ import 'package:movie_app/core/widgets/display_message.dart';
 import 'package:movie_app/features/auth/data/models/sign_up_request_params_model.dart';
 import 'package:movie_app/features/auth/domain/usecases/sign_up_usecase.dart';
 import 'package:movie_app/features/auth/presentation/pages/sign_in_page.dart';
-import 'package:movie_app/features/auth/presentation/widgets/email_textfield.dart';
-import 'package:movie_app/features/auth/presentation/widgets/password_textfield.dart';
-import 'package:movie_app/features/auth/presentation/widgets/auth_button.dart';
-import 'package:movie_app/features/auth/presentation/widgets/auth_text.dart';
-import 'package:movie_app/features/auth/presentation/widgets/auth_link_text.dart';
+import 'package:movie_app/features/auth/presentation/widgets/email_textfield_widget.dart';
+import 'package:movie_app/features/auth/presentation/widgets/password_textfield_widget.dart';
+import 'package:movie_app/features/auth/presentation/widgets/auth_button_widget.dart';
+import 'package:movie_app/features/auth/presentation/widgets/auth_text_widget.dart';
+import 'package:movie_app/features/auth/presentation/widgets/auth_link_text_widget.dart';
 import 'package:movie_app/features/home/presentation/pages/home_page.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -27,13 +27,13 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            AuthTitleText(text: 'Sign Up'),
+            AuthTitleTextWidget(text: 'Sign Up'),
             const SizedBox(height: 30),
-            EmailTextField(controller: _emailController),
+            EmailTextFieldWidget(controller: _emailController),
             const SizedBox(height: 20),
-            PasswordTextField(controller: _passwordController),
+            PasswordTextFieldWidget(controller: _passwordController),
             const SizedBox(height: 60),
-            AuthButton(
+            AuthButtonWidget(
               title: 'Sign Up',
               onPressed: () async =>
                 serviceLocator<SignUpUseCase>().call(
@@ -50,7 +50,7 @@ class SignUpPage extends StatelessWidget {
               }
             ),
             const SizedBox(height: 20),
-            AuthLinkText(
+            AuthLinkTextWidget(
               context,             
               prefixText: 'Already have an account? ',
               linkText: 'Sign In',

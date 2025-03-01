@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PasswordTextField extends StatelessWidget {
+class PasswordTextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final String? hintText;
   final bool obscureText;
 
-  const PasswordTextField({
+  const PasswordTextFieldWidget({
     super.key,
     required this.controller,
     this.hintText,
