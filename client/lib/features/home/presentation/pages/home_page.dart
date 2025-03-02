@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
             CategoryTextWidget(title: 'Trendings 🔥'),
             TrendingMoviesWidget(),
             SizedBox(height: 16),
-            CategoryTextWidget(title: 'Now Playing Movie ▶️'),
+            CategoryTextWidget(title: 'Now Playing Movies'),
             SizedBox(height: 16),
             NowPlayingMoviesWidget(),
             SizedBox(height: 16),
