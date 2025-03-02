@@ -24,6 +24,7 @@ dependencies:
   fan_carousel_image_slider:
   youtube_player_flutter: 9.0.0
   chewie:
+  video_player:
 
 
 dev_dependencies:
