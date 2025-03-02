@@ -4,7 +4,7 @@ import 'package:movie_app/core/configs/api_configs.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/core/domain/entities/movie_trailer_entity.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_movies_trailer_usecase.dart';
-import 'package:movie_app/features/watch/presenation/pages/cubit/movies_trailer_state.dart';
+import 'package:movie_app/features/watch/presenation/cubit/movies_trailer_state.dart';
 import 'package:video_player/video_player.dart';
 
 class MoviesTrailerCubit extends Cubit<MoviesTrailerState>{
