@@ -36,6 +36,6 @@ void setupServiceLocator (){
   serviceLocator.registerSingleton<SignInUseCase>(SignInUseCase());
   serviceLocator.registerSingleton<IsLoggedInUsecase>(IsLoggedInUsecase());
   serviceLocator.registerSingleton<GetTrendingMovieUsecase>(GetTrendingMovieUsecase()); 
-  serviceLocator.registerSingleton<GetNowPlayingMovieUsecase>(GetNowPlayingMovieUsecase()); 
+  serviceLocator.registerSingleton<GetNowPlayingMoviesUsecase>(GetNowPlayingMoviesUsecase()); 
   serviceLocator.registerSingleton<GetPopularTelevisionMoviesUsecase>(GetPopularTelevisionMoviesUsecase()); 
 }
