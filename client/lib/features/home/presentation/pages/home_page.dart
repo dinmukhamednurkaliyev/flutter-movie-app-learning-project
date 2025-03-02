@@ -4,6 +4,7 @@ import 'package:movie_app/core/widgets/app/app_bar_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/features/home/presentation/widgets/category_text_widget.dart';
 import 'package:movie_app/features/home/presentation/widgets/now_playing_movies_widget.dart';
+import 'package:movie_app/features/home/presentation/widgets/popular_television_movies_widget.dart';
 import 'package:movie_app/features/home/presentation/widgets/trending_movies_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -26,6 +27,10 @@ class HomePage extends StatelessWidget {
             CategoryTextWidget(title: 'Now Playing Movies'),
             SizedBox(height: 16),
             NowPlayingMoviesWidget(),
+            SizedBox(height: 16),
+            CategoryTextWidget(title: 'Popular TV Movies'),
+            SizedBox(height: 16),
+            PopularTelevisionMoviesWidget(),
             SizedBox(height: 16),
           ],
         ),
