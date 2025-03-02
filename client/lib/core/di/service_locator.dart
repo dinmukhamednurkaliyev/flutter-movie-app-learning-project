@@ -9,6 +9,7 @@ import 'package:movie_app/features/auth/domain/usecases/sign_up_usecase.dart';
 import 'package:movie_app/features/movie/data/repositories/movie_repository_impl.dart';
 import 'package:movie_app/features/movie/data/sources/movie_remote_source.dart';
 import 'package:movie_app/features/movie/domain/repositories/movie_repository.dart';
+import 'package:movie_app/features/movie/domain/usecases/get_movies_trailer_usecase.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_now_playing_movie_usecase.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_trending_movie_usecase.dart';
 import 'package:movie_app/features/television/data/repositories/television_repository_impl.dart';
@@ -35,7 +36,8 @@ void setupServiceLocator (){
   serviceLocator.registerSingleton<SignUpUseCase>(SignUpUseCase());
   serviceLocator.registerSingleton<SignInUseCase>(SignInUseCase());
   serviceLocator.registerSingleton<IsLoggedInUsecase>(IsLoggedInUsecase());
-  serviceLocator.registerSingleton<GetTrendingMovieUsecase>(GetTrendingMovieUsecase()); 
+  serviceLocator.registerSingleton<GetTrendingMoviesUsecase>(GetTrendingMoviesUsecase()); 
   serviceLocator.registerSingleton<GetNowPlayingMoviesUsecase>(GetNowPlayingMoviesUsecase()); 
   serviceLocator.registerSingleton<GetPopularTelevisionMoviesUsecase>(GetPopularTelevisionMoviesUsecase()); 
+  serviceLocator.registerSingleton<GetMoviesTrailerUsecase>(GetMoviesTrailerUsecase());   
 }

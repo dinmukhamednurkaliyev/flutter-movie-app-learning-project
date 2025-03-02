@@ -1,4 +1,6 @@
 import 'package:dartz/dartz.dart';
+import 'package:movie_app/core/data/models/mapper/movie_trailer_model_mapper.dart';
+import 'package:movie_app/core/data/models/movie_trailer_model.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/features/movie/data/models/mapper/movie_model_mapper.dart';
 import 'package:movie_app/features/movie/data/models/movie_model.dart';
@@ -29,6 +31,20 @@ class MovieRepositoryImpl implements MovieRepository {
       },
       (data){
         var movies = List.from(data["content"]).map((item) => MovieModelMapper.toEntity(MovieModel.fromJson(item))).toList(); 
+        return Right(movies);
+      }
+    );
+  }
+  
+  @override
+  Future<Either> getMovieTrailer(int movieId) async {
+    var response = await serviceLocator<MovieRemoteSource>().getMovieTrailer(movieId);
+    return response.fold(
+      (error){
+        return Left(error);
+      },
+      (data){
+        var movies = MovieTrailerModelMapper.toEntity(MovieTrailerModel.fromJson(data['trailer'])); 
         return Right(movies);
       }
     );

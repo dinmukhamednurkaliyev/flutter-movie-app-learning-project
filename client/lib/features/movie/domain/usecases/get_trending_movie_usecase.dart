@@ -3,7 +3,7 @@ import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/core/domain/usecase/usecase.dart';
 import 'package:movie_app/features/movie/domain/repositories/movie_repository.dart';
 
-class GetTrendingMovieUsecase implements UseCase<Either, dynamic> {
+class GetTrendingMoviesUsecase implements UseCase<Either, dynamic> {
   
   @override
   Future<Either> call({params}) async {
