@@ -9,45 +9,83 @@ import 'package:movie_app/features/movie/domain/repositories/movie_repository.da
 
 class MovieRepositoryImpl implements MovieRepository {
   @override
-  Future<Either> getTrangingMovies() async {
-    var response = await serviceLocator<MovieRemoteSource>().getTrangingMovies();
+  Future<Either> getTrendingMovies() async {
+    var response =
+        await serviceLocator<MovieRemoteSource>().getTrendingMovies();
     return response.fold(
-      (error){
+      (error) {
         return Left(error);
       },
-      (data){
-        var movies = List.from(data["content"]).map((item) => MovieModelMapper.toEntity(MovieModel.fromJson(item))).toList(); 
+      (data) {
+        var movies =
+            List.from(data["content"])
+                .map(
+                  (item) =>
+                      MovieModelMapper.toEntity(MovieModel.fromJson(item)),
+                )
+                .toList();
         return Right(movies);
-      }
-    );
-  }
-  
-  @override 
-  Future<Either> getNowPlayingMovies() async {
-    var response = await serviceLocator<MovieRemoteSource>().getNowPlayingMovies();
-    return response.fold(
-      (error){
-        return Left(error);
       },
-      (data){
-        var movies = List.from(data["content"]).map((item) => MovieModelMapper.toEntity(MovieModel.fromJson(item))).toList(); 
-        return Right(movies);
-      }
-    );
-  }
-  
-  @override
-  Future<Either> getMovieTrailer(int movieId) async {
-    var response = await serviceLocator<MovieRemoteSource>().getMovieTrailer(movieId);
-    return response.fold(
-      (error){
-        return Left(error);
-      },
-      (data){
-        var movies = MovieTrailerModelMapper.toEntity(MovieTrailerModel.fromJson(data['trailer'])); 
-        return Right(movies);
-      }
     );
   }
 
+  @override
+  Future<Either> getNowPlayingMovies() async {
+    var response =
+        await serviceLocator<MovieRemoteSource>().getNowPlayingMovies();
+    return response.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies =
+            List.from(data["content"])
+                .map(
+                  (item) =>
+                      MovieModelMapper.toEntity(MovieModel.fromJson(item)),
+                )
+                .toList();
+        return Right(movies);
+      },
+    );
+  }
+
+  @override
+  Future<Either> getMovieTrailer(int movieId) async {
+    var response = await serviceLocator<MovieRemoteSource>().getMovieTrailer(
+      movieId,
+    );
+    return response.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies = MovieTrailerModelMapper.toEntity(
+          MovieTrailerModel.fromJson(data['trailer']),
+        );
+        return Right(movies);
+      },
+    );
+  }
+
+  @override
+  Future<Either> getRecommendationsMovies(int movieId) async {
+    var response = await serviceLocator<MovieRemoteSource>()
+        .getRecommendationsMovies(movieId);
+    return response.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies =
+            List.from(data["content"])
+                .map(
+                  (item) =>
+                      MovieModelMapper.toEntity(MovieModel.fromJson(item)),
+                )
+                .toList();
+        return Right(movies);
+      },
+    );
+  }
 }

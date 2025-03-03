@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
 
 abstract class MovieRepository {
-  Future<Either> getTrangingMovies();
+  Future<Either> getTrendingMovies();
   Future<Either> getNowPlayingMovies();
   Future<Either> getMovieTrailer(int movieId);
+  Future<Either> getRecommendationsMovies(int movieId);
 }
