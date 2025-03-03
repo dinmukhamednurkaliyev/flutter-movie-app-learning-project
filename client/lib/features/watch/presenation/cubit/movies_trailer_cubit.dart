@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/configs/api_configs.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/core/domain/entities/movie_trailer_entity.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_movies_trailer_usecase.dart';
