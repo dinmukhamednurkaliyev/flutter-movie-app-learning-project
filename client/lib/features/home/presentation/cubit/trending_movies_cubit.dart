@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/features/home/presentation/cubit/trending_movies_state.dart';
-import 'package:movie_app/features/movie/domain/usecases/get_trending_movie_usecase.dart';
+import 'package:movie_app/features/movie/domain/usecases/get_trending_movies_usecase.dart';
 
 class TrendingMoviesCubit extends Cubit<TrendingMoviesState> {
   TrendingMoviesCubit() : super(TrendingMoviesLoading());
