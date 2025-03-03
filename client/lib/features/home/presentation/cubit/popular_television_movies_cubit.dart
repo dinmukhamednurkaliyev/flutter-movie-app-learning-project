@@ -7,14 +7,14 @@ class PopularTelevisionMoviesCubit extends Cubit<PopularTelevisionMoviesState> {
   PopularTelevisionMoviesCubit() : super(PopularTelevisionMoviesLoading());
 
   void getPopularTelevisionMovies() async {
-    var data = await serviceLocator<GetPopularTelevisionMoviesUsecase>().call();
+    var data = await serviceLocator<GetPopularTelevisionMoviesUseCase>().call();
     data.fold(
-      (error){
+      (error) {
         emit(FailureLoadingPopularTelevisionMovies(message: error));
       },
-      (data){
+      (data) {
         emit(PopularTelevisionMoviesLoaded(televisionMovies: data));
-      }
+      },
     );
   }
 }
