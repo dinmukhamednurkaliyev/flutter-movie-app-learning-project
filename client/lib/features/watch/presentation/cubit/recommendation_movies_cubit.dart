@@ -6,8 +6,10 @@ import 'package:movie_app/features/watch/presentation/cubit/recommendation_movie
 class RecommendationMoviesCubit extends Cubit<RecommendationMoviesState> {
   RecommendationMoviesCubit() : super(RecommendationMoviesLoading());
 
-  void getRecommendationMovies() async {
-    var data = await serviceLocator<GetRecommendationMoviesUseCase>().call();
+  void getRecommendationMovies(int movieId) async {
+    var data = await serviceLocator<GetRecommendationMoviesUseCase>().call(
+      params: movieId,
+    );
     data.fold(
       (error) {
         emit(FailureLoadingRecommendationMovies(message: error));
