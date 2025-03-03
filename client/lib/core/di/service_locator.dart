@@ -11,7 +11,7 @@ import 'package:movie_app/features/movie/data/sources/movie_remote_source.dart';
 import 'package:movie_app/features/movie/domain/repositories/movie_repository.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_movies_trailer_usecase.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_now_playing_movies_usecase.dart';
-import 'package:movie_app/features/movie/domain/usecases/get_recommendation_movies.dart';
+import 'package:movie_app/features/movie/domain/usecases/get_recommendation_movies_usecase.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_trending_movies_usecase.dart';
 import 'package:movie_app/features/television/data/repositories/television_repository_impl.dart';
 import 'package:movie_app/features/television/data/sources/television_remote_source.dart';
@@ -53,7 +53,7 @@ void setupServiceLocator() {
   serviceLocator.registerSingleton<GetMoviesTrailerUseCase>(
     GetMoviesTrailerUseCase(),
   );
-  serviceLocator.registerSingleton<GetRecommendationMovies>(
-    GetRecommendationMovies(),
+  serviceLocator.registerSingleton<GetRecommendationMoviesUseCase>(
+    GetRecommendationMoviesUseCase(),
   );
 }
