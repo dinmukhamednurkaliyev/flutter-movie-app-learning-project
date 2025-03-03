@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/features/watch/presenation/cubit/movies_trailer_cubit.dart';
-import 'package:movie_app/features/watch/presenation/cubit/movies_trailer_state.dart';
+import 'package:movie_app/features/watch/presentation/cubit/movies_trailer_cubit.dart';
+import 'package:movie_app/features/watch/presentation/cubit/movies_trailer_state.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlayerWidget extends StatelessWidget {

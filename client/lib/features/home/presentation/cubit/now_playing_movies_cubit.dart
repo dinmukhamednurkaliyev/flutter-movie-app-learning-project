@@ -7,14 +7,14 @@ class NowPlayingMoviesCubit extends Cubit<NowPlayingMoviesState> {
   NowPlayingMoviesCubit() : super(NowPlayingMoviesLoading());
 
   void getNowPlayingMovies() async {
-    var data = await serviceLocator<GetNowPlayingMoviesUsecase>().call();
+    var data = await serviceLocator<GetNowPlayingMoviesUseCase>().call();
     data.fold(
-      (error){
+      (error) {
         emit(FailureLoadingNowPlayingMovies(message: error));
       },
-      (data){
+      (data) {
         emit(NowPlayingMoviesLoaded(movies: data));
-      }
+      },
     );
   }
 }

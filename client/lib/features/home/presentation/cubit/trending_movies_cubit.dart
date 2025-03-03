@@ -7,14 +7,14 @@ class TrendingMoviesCubit extends Cubit<TrendingMoviesState> {
   TrendingMoviesCubit() : super(TrendingMoviesLoading());
 
   void getTrendingMovies() async {
-    var data = await serviceLocator<GetTrendingMoviesUsecase>().call();
+    var data = await serviceLocator<GetTrendingMoviesUseCase>().call();
     data.fold(
-      (error){
+      (error) {
         emit(FailureLoadingTrendingMovies(message: error));
       },
-      (data){
+      (data) {
         emit(TrendingMoviesLoaded(movies: data));
-      }
+      },
     );
   }
 }

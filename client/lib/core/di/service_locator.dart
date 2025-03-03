@@ -19,25 +19,37 @@ import 'package:movie_app/features/television/domain/usecases/get_popular_televi
 
 final serviceLocator = GetIt.instance;
 
-void setupServiceLocator (){
+void setupServiceLocator() {
   serviceLocator.registerSingleton<ApiClient>(ApiClient());
 
   // Sources
   serviceLocator.registerSingleton<AuthRemoteSource>(AuthRemoteSourceImpl());
   serviceLocator.registerSingleton<MovieRemoteSource>(MovieRemoteSourceImpl());
-  serviceLocator.registerSingleton<TelevisionRemoteSource>(TelevisionRemoteSourceImpl());
+  serviceLocator.registerSingleton<TelevisionRemoteSource>(
+    TelevisionRemoteSourceImpl(),
+  );
 
   // Repositories
   serviceLocator.registerSingleton<AuthRepository>(AuthRepositoryImpl());
   serviceLocator.registerSingleton<MovieRepository>(MovieRepositoryImpl());
-  serviceLocator.registerSingleton<TelevisionRepository>(TelevisionRepositoryImpl());
+  serviceLocator.registerSingleton<TelevisionRepository>(
+    TelevisionRepositoryImpl(),
+  );
 
   // Usecases
   serviceLocator.registerSingleton<SignUpUseCase>(SignUpUseCase());
   serviceLocator.registerSingleton<SignInUseCase>(SignInUseCase());
-  serviceLocator.registerSingleton<IsLoggedInUsecase>(IsLoggedInUsecase());
-  serviceLocator.registerSingleton<GetTrendingMoviesUsecase>(GetTrendingMoviesUsecase()); 
-  serviceLocator.registerSingleton<GetNowPlayingMoviesUsecase>(GetNowPlayingMoviesUsecase()); 
-  serviceLocator.registerSingleton<GetPopularTelevisionMoviesUsecase>(GetPopularTelevisionMoviesUsecase()); 
-  serviceLocator.registerSingleton<GetMoviesTrailerUsecase>(GetMoviesTrailerUsecase());   
+  serviceLocator.registerSingleton<IsLoggedInUseCase>(IsLoggedInUseCase());
+  serviceLocator.registerSingleton<GetTrendingMoviesUseCase>(
+    GetTrendingMoviesUseCase(),
+  );
+  serviceLocator.registerSingleton<GetNowPlayingMoviesUseCase>(
+    GetNowPlayingMoviesUseCase(),
+  );
+  serviceLocator.registerSingleton<GetPopularTelevisionMoviesUsecase>(
+    GetPopularTelevisionMoviesUsecase(),
+  );
+  serviceLocator.registerSingleton<GetMoviesTrailerUseCase>(
+    GetMoviesTrailerUseCase(),
+  );
 }

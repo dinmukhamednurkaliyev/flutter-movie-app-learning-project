@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/widgets/app/app_bar_widget.dart';
 import 'package:movie_app/features/movie/domain/entities/movie_entity.dart';
-import 'package:movie_app/features/watch/presenation/widgets/video_overview_widget.dart';
-import 'package:movie_app/features/watch/presenation/widgets/video_player_widget.dart';
-import 'package:movie_app/features/watch/presenation/widgets/video_release_date_widget.dart';
-import 'package:movie_app/features/watch/presenation/widgets/video_title_widget.dart';
-import 'package:movie_app/features/watch/presenation/widgets/video_vote_average_widget.dart';
+import 'package:movie_app/features/watch/presentation/widgets/video_overview_widget.dart';
+import 'package:movie_app/features/watch/presentation/widgets/video_player_widget.dart';
+import 'package:movie_app/features/watch/presentation/widgets/video_release_date_widget.dart';
+import 'package:movie_app/features/watch/presentation/widgets/video_title_widget.dart';
+import 'package:movie_app/features/watch/presentation/widgets/video_vote_average_widget.dart';
 
 class MovieWatchPage extends StatelessWidget {
   final MovieEntity movieEntity;
