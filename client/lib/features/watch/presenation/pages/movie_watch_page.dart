@@ -8,10 +8,6 @@ class MovieWatchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppbarWidget(
-        hideBack: false,
-      ),
-    );
+    return Scaffold(appBar: AppbarWidget(hideBack: false));
   }
 }

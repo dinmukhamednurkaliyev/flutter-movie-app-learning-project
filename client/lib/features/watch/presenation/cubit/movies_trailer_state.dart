@@ -1,15 +1,15 @@
-import 'package:chewie/chewie.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-abstract class MoviesTrailerState{}
+abstract class MoviesTrailerState {}
 
-class MoviesTrailerLoading extends MoviesTrailerState{}
+class MoviesTrailerLoading extends MoviesTrailerState {}
 
-class MoviesTrailerLoaded extends MoviesTrailerState{
-  final ChewieController chewieController;
-  MoviesTrailerLoaded({required this.chewieController}); 
+class MoviesTrailerLoaded extends MoviesTrailerState {
+  final YoutubePlayerController youtubePlayerController;
+  MoviesTrailerLoaded({required this.youtubePlayerController});
 }
 
-class FailureLoadMoviesTrailer extends MoviesTrailerState{
+class FailureLoadMoviesTrailer extends MoviesTrailerState {
   final String message;
   FailureLoadMoviesTrailer({required this.message});
 }
