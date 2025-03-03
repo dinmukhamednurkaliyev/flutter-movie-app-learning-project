@@ -8,7 +8,8 @@ abstract class MovieRemoteSource {
   Future<Either> getTrendingMovies();
   Future<Either> getNowPlayingMovies();
   Future<Either> getMovieTrailer(int movieId);
-  Future<Either> getRecommendationsMovies(int movieId);
+  Future<Either> getRecommendationMovies(int movieId);
+  Future<Either> getSimilarMovies(int movieId);
 }
 
 class MovieRemoteSourceImpl implements MovieRemoteSource {
@@ -49,10 +50,22 @@ class MovieRemoteSourceImpl implements MovieRemoteSource {
   }
 
   @override
-  Future<Either> getRecommendationsMovies(int movieId) async {
+  Future<Either> getRecommendationMovies(int movieId) async {
     try {
       var response = await serviceLocator<ApiClient>().get(
         '${ApiConfig.movie}$movieId/recommendations',
+      );
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['message']);
+    }
+  }
+
+  @override
+  Future<Either> getSimilarMovies(int movieId) async {
+    try {
+      var response = await serviceLocator<ApiClient>().get(
+        '${ApiConfig.movie}$movieId/similar',
       );
       return Right(response.data);
     } on DioException catch (e) {
