@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidget(
+      appBar: AppBarWidget(
         hideBack: true,
         title: SvgPicture.asset(AppVectorsAssets.logo),
       ),

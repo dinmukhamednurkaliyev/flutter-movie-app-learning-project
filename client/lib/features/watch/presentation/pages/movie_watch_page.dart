@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/widgets/app/app_bar_widget.dart';
 import 'package:movie_app/features/movie/domain/entities/movie_entity.dart';
+import 'package:movie_app/features/watch/presentation/widgets/recommendation_movies_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/video_overview_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/video_player_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/video_release_date_widget.dart';
@@ -14,7 +15,7 @@ class MovieWatchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppbarWidget(hideBack: false),
+      appBar: const AppBarWidget(hideBack: false),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
@@ -35,6 +36,8 @@ class MovieWatchPage extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             VideoOverviewWidget(overview: movieEntity.overview!),
+            const SizedBox(height: 16),
+            RecommendationMoviesWidget(movieId: movieEntity.id!),
           ],
         ),
       ),

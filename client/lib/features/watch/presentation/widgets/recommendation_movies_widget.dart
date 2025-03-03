@@ -20,17 +20,27 @@ class RecommendationMoviesWidget extends StatelessWidget {
             return Center(child: const CircularProgressIndicator());
           }
           if (state is RecommendationMoviesLoaded) {
-            return SizedBox(
-              height: 300,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                itemBuilder: (context, index) {
-                  return MovieCardWidget(movieEntity: state.movies[index]);
-                },
-                separatorBuilder: (context, index) => const SizedBox(width: 10),
-                itemCount: state.movies.length,
-              ),
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Recommendation',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+                const SizedBox(height: 16),
+                SizedBox(
+                  height: 300,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return MovieCardWidget(movieEntity: state.movies[index]);
+                    },
+                    separatorBuilder:
+                        (context, index) => const SizedBox(width: 10),
+                    itemCount: state.movies.length,
+                  ),
+                ),
+              ],
             );
           }
           if (state is FailureLoadingRecommendationMovies) {
