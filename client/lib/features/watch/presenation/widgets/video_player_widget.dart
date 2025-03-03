@@ -4,9 +4,9 @@ import 'package:movie_app/features/watch/presenation/cubit/movies_trailer_cubit.
 import 'package:movie_app/features/watch/presenation/cubit/movies_trailer_state.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class VideoPlayer extends StatelessWidget {
+class VideoPlayerWidget extends StatelessWidget {
   final int id;
-  const VideoPlayer({required this.id, super.key});
+  const VideoPlayerWidget({required this.id, super.key});
 
   @override
   Widget build(BuildContext context) {
