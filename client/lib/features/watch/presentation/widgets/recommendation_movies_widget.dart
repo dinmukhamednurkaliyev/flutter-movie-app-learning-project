@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/widgets/movie/movies_card_widget.dart';
+import 'package:movie_app/core/presentation/widgets/movie/movies_card_widget.dart';
 import 'package:movie_app/features/watch/presentation/cubit/recommendation_movies_cubit.dart';
 import 'package:movie_app/features/watch/presentation/cubit/recommendation_movies_state.dart';
 

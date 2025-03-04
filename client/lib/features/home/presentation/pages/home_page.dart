@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/assets/app_vectors.dart';
-import 'package:movie_app/core/widgets/app/app_bar_widget.dart';
+import 'package:movie_app/core/presentation/widgets/app/app_bar_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_app/features/home/presentation/widgets/category_text_widget.dart';
 import 'package:movie_app/features/home/presentation/widgets/now_playing_movies_widget.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/widgets/app/app_bar_widget.dart';
+import 'package:movie_app/core/presentation/widgets/app/app_bar_widget.dart';
 import 'package:movie_app/features/movie/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/watch/presentation/widgets/recommendation_movies_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/similar_movies_widget.dart';
