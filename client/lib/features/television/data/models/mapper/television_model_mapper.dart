@@ -1,8 +1,8 @@
 import 'package:movie_app/features/television/data/models/television_model.dart';
 import 'package:movie_app/features/television/domain/entities/television_entity.dart';
 
-class TelevsionModelMapper{
-  static TelevisionEntity toEntity(TelevisionModel televisionModel){
+class TelevisionModelMapper {
+  static TelevisionEntity toEntity(TelevisionModel televisionModel) {
     return TelevisionEntity(
       adult: televisionModel.adult,
       backdropPath: televisionModel.backdropPath,

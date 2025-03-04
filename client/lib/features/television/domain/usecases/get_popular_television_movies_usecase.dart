@@ -6,6 +6,7 @@ import 'package:movie_app/features/television/domain/repositories/television_rep
 class GetPopularTelevisionMoviesUseCase implements UseCase<Either, dynamic> {
   @override
   Future<Either> call({params}) async {
-    return await serviceLocator<TelevisionRepository>().getPopularTelevision();
+    return await serviceLocator<TelevisionRepository>()
+        .getPopularTelevisionMovies();
   }
 }
