@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/di/service_locator.dart';
+import 'package:movie_app/core/presentation/cubit/generic_data_cubit.dart';
+import 'package:movie_app/core/presentation/cubit/generic_data_state.dart';
 import 'package:movie_app/core/presentation/widgets/television/television_movies_card_widget.dart';
-import 'package:movie_app/features/home/presentation/cubit/popular_television_movies_cubit.dart';
-import 'package:movie_app/features/home/presentation/cubit/popular_television_movies_state.dart';
+import 'package:movie_app/features/television/domain/entities/television_entity.dart';
+import 'package:movie_app/features/television/domain/usecases/get_popular_television_movies_usecase.dart';
 
 class PopularTelevisionMoviesWidget extends StatelessWidget {
   const PopularTelevisionMoviesWidget({super.key});
@@ -12,16 +15,15 @@ class PopularTelevisionMoviesWidget extends StatelessWidget {
     return BlocProvider(
       create:
           (context) =>
-              PopularTelevisionMoviesCubit()..getPopularTelevisionMovies(),
-      child: BlocBuilder<
-        PopularTelevisionMoviesCubit,
-        PopularTelevisionMoviesState
-      >(
+              GenericDataCubit()..getGenericData<List<TelevisionEntity>>(
+                serviceLocator<GetPopularTelevisionMoviesUseCase>(),
+              ),
+      child: BlocBuilder<GenericDataCubit, GenericDataState>(
         builder: (context, state) {
-          if (state is PopularTelevisionMoviesLoading) {
+          if (state is GenericDataLoading) {
             return Center(child: const CircularProgressIndicator());
           }
-          if (state is PopularTelevisionMoviesLoaded) {
+          if (state is GenericDataLoaded) {
             return SizedBox(
               height: 300,
               child: ListView.separated(
@@ -29,15 +31,15 @@ class PopularTelevisionMoviesWidget extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 itemBuilder: (context, index) {
                   return TelevisionMoviesCardWidget(
-                    televisionMoviesEntity: state.televisionMovies[index],
+                    televisionMoviesEntity: state.data[index],
                   );
                 },
                 separatorBuilder: (context, index) => const SizedBox(width: 10),
-                itemCount: state.televisionMovies.length,
+                itemCount: state.data.length,
               ),
             );
           }
-          if (state is FailureLoadingPopularTelevisionMovies) {
+          if (state is FailureLoadingGenericData) {
             return Text(state.message);
           }
           return Container();

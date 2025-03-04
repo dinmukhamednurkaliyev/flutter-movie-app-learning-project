@@ -5,8 +5,8 @@ import 'package:movie_app/core/presentation/cubit/generic_data_state.dart';
 class GenericDataCubit extends Cubit<GenericDataState> {
   GenericDataCubit() : super(GenericDataLoading());
 
-  void getGenericData<T>(UseCase useCase) async {
-    var data = await useCase.call();
+  void getGenericData<T>(UseCase useCase, {dynamic params}) async {
+    var data = await useCase.call(params: params);
     data.fold(
       (error) {
         emit(FailureLoadingGenericData(message: error));
