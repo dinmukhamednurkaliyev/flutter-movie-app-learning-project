@@ -18,6 +18,8 @@ import 'package:movie_app/features/television/data/repositories/television_repos
 import 'package:movie_app/features/television/data/sources/television_remote_source.dart';
 import 'package:movie_app/features/television/domain/repositories/television_repository.dart';
 import 'package:movie_app/features/television/domain/usecases/get_popular_television_movies_usecase.dart';
+import 'package:movie_app/features/television/domain/usecases/get_recommendation_television_movies_usecase.dart';
+import 'package:movie_app/features/television/domain/usecases/get_similar_television_movies_usecase.dart';
 
 final serviceLocator = GetIt.instance;
 
@@ -59,5 +61,11 @@ void setupServiceLocator() {
   );
   serviceLocator.registerSingleton<GetSimilarMoviesUseCase>(
     GetSimilarMoviesUseCase(),
+  );
+  serviceLocator.registerSingleton<GetRecommendationTelevisionMoviesUseCase>(
+    GetRecommendationTelevisionMoviesUseCase(),
+  );
+  serviceLocator.registerSingleton<GetSimilarTelevisionMoviesUseCase>(
+    GetSimilarTelevisionMoviesUseCase(),
   );
 }
