@@ -1,4 +1,6 @@
 import 'package:dartz/dartz.dart';
+import 'package:movie_app/core/data/models/mapper/movie_keyword_model_mapper.dart';
+import 'package:movie_app/core/data/models/movie_keyword_model.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/features/television/data/models/mapper/television_model_mapper.dart';
 import 'package:movie_app/features/television/data/models/television_model.dart';
@@ -67,6 +69,28 @@ class TelevisionRepositoryImpl implements TelevisionRepository {
                 .map(
                   (item) => TelevisionModelMapper.toEntity(
                     TelevisionModel.fromJson(item),
+                  ),
+                )
+                .toList();
+        return Right(movies);
+      },
+    );
+  }
+
+  @override
+  Future<Either> getKeywordMovies(int televisionMovieId) async {
+    var response = await serviceLocator<TelevisionRemoteSource>()
+        .getKeywordMovies(televisionMovieId);
+    return response.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies =
+            List.from(data["content"])
+                .map(
+                  (item) => MovieKeywordModelMapper.toEntity(
+                    MovieKeywordModel.fromJson(item),
                   ),
                 )
                 .toList();

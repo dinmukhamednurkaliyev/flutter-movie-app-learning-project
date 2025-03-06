@@ -8,6 +8,7 @@ abstract class TelevisionRemoteSource {
   Future<Either> getPopularTelevisionMovies();
   Future<Either> getRecommendationTelevisionMovies(int televisionMovieId);
   Future<Either> getSimilarTelevisionMovies(int televisionMovieId);
+  Future<Either> getKeywordMovies(int televisionMovieId);
 }
 
 class TelevisionRemoteSourceImpl implements TelevisionRemoteSource {
@@ -40,6 +41,18 @@ class TelevisionRemoteSourceImpl implements TelevisionRemoteSource {
     try {
       var response = await serviceLocator<ApiClient>().get(
         '${ApiConfig.tv}$televisionMovieId/similar',
+      );
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['message']);
+    }
+  }
+
+  @override
+  Future<Either> getKeywordMovies(int televisionMovieId) async {
+    try {
+      var response = await serviceLocator<ApiClient>().get(
+        '${ApiConfig.tv}$televisionMovieId/keywords',
       );
       return Right(response.data);
     } on DioException catch (e) {
