@@ -17,6 +17,7 @@ import 'package:movie_app/features/movie/domain/usecases/get_trending_movies_use
 import 'package:movie_app/features/television/data/repositories/television_repository_impl.dart';
 import 'package:movie_app/features/television/data/sources/television_remote_source.dart';
 import 'package:movie_app/features/television/domain/repositories/television_repository.dart';
+import 'package:movie_app/features/television/domain/usecases/get_movie_keyboard_usecase.dart';
 import 'package:movie_app/features/television/domain/usecases/get_popular_television_movies_usecase.dart';
 import 'package:movie_app/features/television/domain/usecases/get_recommendation_television_movies_usecase.dart';
 import 'package:movie_app/features/television/domain/usecases/get_similar_television_movies_usecase.dart';
@@ -67,5 +68,8 @@ void setupServiceLocator() {
   );
   serviceLocator.registerSingleton<GetSimilarTelevisionMoviesUseCase>(
     GetSimilarTelevisionMoviesUseCase(),
+  );
+  serviceLocator.registerSingleton<GetMovieKeyboardUseCase>(
+    GetMovieKeyboardUseCase(),
   );
 }
