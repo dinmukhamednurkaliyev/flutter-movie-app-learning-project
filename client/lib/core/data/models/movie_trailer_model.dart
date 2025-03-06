@@ -12,18 +12,18 @@ class MovieTrailerModel {
     required this.id,
   });
 
-  final String ? iso6391;
-  final String ? iso31661;
-  final String ? name;
-  final String ? key;
-  final String ? site;
-  final int ? size;
-  final String ? type;
-  final bool ? official;
-  final DateTime ? publishedAt;
-  final String ? id;
+  final String? iso6391;
+  final String? iso31661;
+  final String? name;
+  final String? key;
+  final String? site;
+  final int? size;
+  final String? type;
+  final bool? official;
+  final DateTime? publishedAt;
+  final String? id;
 
-  factory MovieTrailerModel.fromJson(Map < String, dynamic > json) {
+  factory MovieTrailerModel.fromJson(Map<String, dynamic> json) {
     return MovieTrailerModel(
       iso6391: json["iso_639_1"],
       iso31661: json["iso_3166_1"],
@@ -37,5 +37,4 @@ class MovieTrailerModel {
       id: json["id"],
     );
   }
-
 }
