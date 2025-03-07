@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/presentation/widgets/app/app_bar_widget.dart';
 import 'package:movie_app/features/television/domain/entities/television_entity.dart';
+import 'package:movie_app/features/watch/presentation/widgets/movie_keywords_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/recommendation_television_movies_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/similar_television_movies_widget.dart';
 import 'package:movie_app/features/watch/presentation/widgets/video_overview_widget.dart';
@@ -21,9 +22,11 @@ class TelevisionMoviePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VideoPlayerWidget(id: televisionEntity.id!),
+            //VideoPlayerWidget(id: televisionEntity.id!),
             const SizedBox(height: 16),
             VideoTitleWidget(title: televisionEntity.name!),
+            const SizedBox(height: 16),
+            MovieKeywordsWidget(televisionMovieId: televisionEntity.id!),
             const SizedBox(height: 16),
             VideoVoteAverageWidget(
               videoVoteAverage: televisionEntity.voteAverage!,

@@ -27,6 +27,7 @@ class MovieKeywordsWidget extends StatelessWidget {
           if (state is GenericDataLoaded) {
             List<MovieKeywordEntity> movieKeyword = state.data;
             return Wrap(
+              spacing: 5,
               children:
                   movieKeyword
                       .map((item) => Chip(label: Text(item.name!)))
