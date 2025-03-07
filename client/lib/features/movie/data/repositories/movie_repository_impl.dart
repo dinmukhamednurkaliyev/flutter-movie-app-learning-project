@@ -112,10 +112,8 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either> searchMovies(String query) async {
-    var response = await serviceLocator<MovieRemoteSource>().searchMovies(
-      query,
-    );
+  Future<Either> searchMovie(String query) async {
+    var response = await serviceLocator<MovieRemoteSource>().searchMovie(query);
     return response.fold(
       (error) {
         return Left(error);

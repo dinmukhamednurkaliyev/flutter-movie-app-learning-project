@@ -30,15 +30,15 @@ void setupServiceLocator() {
   // Sources
   serviceLocator.registerSingleton<AuthRemoteSource>(AuthRemoteSourceImpl());
   serviceLocator.registerSingleton<MovieRemoteSource>(MovieRemoteSourceImpl());
-  serviceLocator.registerSingleton<TelevisionRemoteSource>(
-    TelevisionRemoteSourceImpl(),
+  serviceLocator.registerSingleton<TelevisionMovieRemoteSource>(
+    TelevisionMovieRemoteSourceImpl(),
   );
 
   // Repositories
   serviceLocator.registerSingleton<AuthRepository>(AuthRepositoryImpl());
   serviceLocator.registerSingleton<MovieRepository>(MovieRepositoryImpl());
-  serviceLocator.registerSingleton<TelevisionRepository>(
-    TelevisionRepositoryImpl(),
+  serviceLocator.registerSingleton<TelevisionMovieRepository>(
+    TelevisionMovieRepositoryImpl(),
   );
 
   // UseCases

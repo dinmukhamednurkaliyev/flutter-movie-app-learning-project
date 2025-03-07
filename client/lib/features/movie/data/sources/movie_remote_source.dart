@@ -10,7 +10,7 @@ abstract class MovieRemoteSource {
   Future<Either> getMovieTrailer(int movieId);
   Future<Either> getRecommendationMovies(int movieId);
   Future<Either> getSimilarMovies(int movieId);
-  Future<Either> searchMovies(String query);
+  Future<Either> searchMovie(String query);
 }
 
 class MovieRemoteSourceImpl implements MovieRemoteSource {
@@ -75,7 +75,7 @@ class MovieRemoteSourceImpl implements MovieRemoteSource {
   }
 
   @override
-  Future<Either> searchMovies(String query) async {
+  Future<Either> searchMovie(String query) async {
     try {
       var response = await serviceLocator<ApiClient>().get(
         '${ApiConfig.search}movie/$query',

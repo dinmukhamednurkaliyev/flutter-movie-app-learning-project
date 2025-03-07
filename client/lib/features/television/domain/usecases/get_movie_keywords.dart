@@ -6,7 +6,7 @@ import 'package:movie_app/features/television/domain/repositories/television_rep
 class GetMovieKeywordsUseCase implements UseCase<Either, int> {
   @override
   Future<Either> call({int? params}) async {
-    return await serviceLocator<TelevisionRepository>().getKeywordMovies(
+    return await serviceLocator<TelevisionMovieRepository>().getKeywordMovies(
       params!,
     );
   }
