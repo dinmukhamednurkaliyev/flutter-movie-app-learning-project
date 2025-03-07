@@ -1,3 +1,5 @@
+import 'package:movie_app/core/assets/app_images.dart';
+
 class TelevisionEntity {
   TelevisionEntity({
     required this.adult,
@@ -16,18 +18,24 @@ class TelevisionEntity {
     required this.voteCount,
   });
 
-  final bool ? adult;
-  final String ? backdropPath;
-  final List < int > genreIds;
-  final int ? id;
-  final List < String > originCountry;
-  final String ? originalLanguage;
-  final String ? originalName;
-  final String ? overview;
-  final double ? popularity;
-  final String ? posterPath;
-  final DateTime ? firstAirDate;
-  final String ? name;
-  final double ? voteAverage;
-  final int ? voteCount;
+  final bool? adult;
+  final String? backdropPath;
+  final List<int> genreIds;
+  final int? id;
+  final List<String> originCountry;
+  final String? originalLanguage;
+  final String? originalName;
+  final String? overview;
+  final double? popularity;
+  final String? posterPath;
+  final DateTime? firstAirDate;
+  final String? name;
+  final double? voteAverage;
+  final int? voteCount;
+
+  String providePosterPath() {
+    return posterPath != null
+        ? AppImagesAssets.movieImageBasePath + posterPath!
+        : AppImagesAssets.defaultImage;
+  }
 }

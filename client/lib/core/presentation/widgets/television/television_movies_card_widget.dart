@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/assets/app_images.dart';
 import 'package:movie_app/core/navigation/app_navigation.dart';
 import 'package:movie_app/core/theme/app_colors.dart';
 import 'package:movie_app/features/television/domain/entities/television_entity.dart';
@@ -39,8 +38,7 @@ class TelevisionMoviesCardWidget extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.fill,
                     image: NetworkImage(
-                      AppImagesAssets.movieImageBasePath +
-                          televisionMoviesEntity.posterPath!,
+                      televisionMoviesEntity.providePosterPath(),
                     ),
                   ),
                   borderRadius: const BorderRadius.only(
