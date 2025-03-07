@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/di/service_locator.dart';
 import 'package:movie_app/features/movie/domain/usecases/search_movie_usecase.dart';
@@ -7,16 +8,19 @@ import 'package:movie_app/features/television/domain/usecases/search_television_
 
 class SearchCubit extends Cubit<SearchState> {
   SearchCubit() : super(SearchInitial());
+  TextEditingController textEditingController = TextEditingController();
 
   void search(String query, SearchType searchType) {
-    emit(SearchLoading());
-    switch (searchType) {
-      case SearchType.movie:
-        searchMovie(query);
-        break;
-      case SearchType.televisionMovie:
-        searchTelevisionMovie(query);
-        break;
+    if (query.isNotEmpty) {
+      emit(SearchLoading());
+      switch (searchType) {
+        case SearchType.movie:
+          searchMovie(query);
+          break;
+        case SearchType.televisionMovie:
+          searchTelevisionMovie(query);
+          break;
+      }
     }
   }
 
