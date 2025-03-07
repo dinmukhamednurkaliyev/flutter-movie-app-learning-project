@@ -28,7 +28,7 @@ class SearchPage extends StatelessWidget {
               const SizedBox(height: 16),
               SearchOptionsWidget(),
               const SizedBox(height: 16),
-              SearchContentWidget(),
+              Expanded(child: SearchContentWidget()),
             ],
           ),
         ),

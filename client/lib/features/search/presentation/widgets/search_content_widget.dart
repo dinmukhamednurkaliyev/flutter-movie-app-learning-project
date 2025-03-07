@@ -18,6 +18,7 @@ class SearchContentWidget extends StatelessWidget {
         if (state is SearchMoviesLoaded) {
           return GridView.builder(
             itemCount: state.movies.length,
+            shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 10,
@@ -32,6 +33,7 @@ class SearchContentWidget extends StatelessWidget {
         if (state is SearchTelevisionMoviesLoaded) {
           return GridView.builder(
             itemCount: state.televisionMovies.length,
+            shrinkWrap: true,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 10,
