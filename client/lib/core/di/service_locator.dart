@@ -14,6 +14,7 @@ import 'package:movie_app/features/movie/domain/usecases/get_now_playing_movies_
 import 'package:movie_app/features/movie/domain/usecases/get_recommendation_movies_usecase.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_similar_movies_usecase.dart';
 import 'package:movie_app/features/movie/domain/usecases/get_trending_movies_usecase.dart';
+import 'package:movie_app/features/movie/domain/usecases/search_movie_usecase.dart';
 import 'package:movie_app/features/television/data/repositories/television_repository_impl.dart';
 import 'package:movie_app/features/television/data/sources/television_remote_source.dart';
 import 'package:movie_app/features/television/domain/repositories/television_repository.dart';
@@ -21,6 +22,7 @@ import 'package:movie_app/features/television/domain/usecases/get_movie_keywords
 import 'package:movie_app/features/television/domain/usecases/get_popular_television_movies_usecase.dart';
 import 'package:movie_app/features/television/domain/usecases/get_recommendation_television_movies_usecase.dart';
 import 'package:movie_app/features/television/domain/usecases/get_similar_television_movies_usecase.dart';
+import 'package:movie_app/features/television/domain/usecases/search_television_movie_usecase.dart';
 
 final serviceLocator = GetIt.instance;
 
@@ -71,5 +73,9 @@ void setupServiceLocator() {
   );
   serviceLocator.registerSingleton<GetMovieKeywordsUseCase>(
     GetMovieKeywordsUseCase(),
+  );
+  serviceLocator.registerSingleton<SearchMovieUseCase>(SearchMovieUseCase());
+  serviceLocator.registerSingleton<SearchTelevisionMovieUseCase>(
+    SearchTelevisionMovieUseCase(),
   );
 }
