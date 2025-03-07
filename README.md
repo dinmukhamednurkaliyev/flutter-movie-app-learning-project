@@ -1,4 +1,4 @@
-# movie_app - Learning Project
+# Flutter Movie App (Learning Project)
 
 
 ## Description
