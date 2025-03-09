@@ -20,3 +20,7 @@ This project is created with the goal of learning mobile application development
 <img src="Screenshots/search_page.png" width="200"/>
 <img src="Screenshots/search_page1.png" width="200"/>
 </p>
+
+## Resources
+
+Youtube: [Build Movie App With Flutter - Clean Architecture, Bloc, API, Dio](https://www.youtube.com/watch?v=NPI_Z1KiKdI&list=PLcmJOjMPMVkfM29MgeOt9NyjZF1vGeIMH&index=1)
